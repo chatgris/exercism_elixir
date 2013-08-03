@@ -7,20 +7,20 @@ defmodule Teenager do
 
   def hey(sentence) do
     cond do
-      upcase?(sentence) ->
+      yelled?(sentence) ->
         "Woah, chill out!"
-      question?(sentence) ->
+      questioned?(sentence) ->
         "Sure."
       true ->
         "Whatever."
     end
   end
 
-  defp upcase?(sentence) do
+  defp yelled?(sentence) do
     sentence == upcase(sentence)
   end
 
-  defp question?(sentence) do
+  defp questioned?(sentence) do
     ends_with?(sentence, "?")
   end
 end

@@ -1,10 +1,10 @@
 defmodule Teenager do
   import String, only: [ upcase: 1, ends_with?: 2]
 
-  def hey(""), do: "Fine. Be that way!"
-
   def hey(sentence) do
     cond do
+      empty?(sentence) ->
+        "Fine. Be that way!"
       yelled?(sentence) ->
         "Woah, chill out!"
       questioned?(sentence) ->
@@ -12,6 +12,10 @@ defmodule Teenager do
       true ->
         "Whatever."
     end
+  end
+
+  defp empty?(sentence) do
+    sentence == ""
   end
 
   defp yelled?(sentence) do

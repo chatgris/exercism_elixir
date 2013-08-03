@@ -1,9 +1,7 @@
 defmodule Teenager do
   import String, only: [ upcase: 1, ends_with?: 2]
 
-  def hey("") do
-    "Fine. Be that way!"
-  end
+  def hey(""), do: "Fine. Be that way!"
 
   def hey(sentence) do
     cond do

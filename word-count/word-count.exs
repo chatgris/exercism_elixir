@@ -17,7 +17,7 @@ defmodule Words do
 
   defp display(words) do
     Enum.reduce words, HashDict.new, fn (word, acc) ->
-      HashDict.merge acc, [{word, 1}], fn(k, old_count, new_count) ->
+      HashDict.merge acc, [{word, 1}], fn(_key, old_count, new_count) ->
         (old_count || 0) + new_count
       end
     end

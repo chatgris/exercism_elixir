@@ -6,7 +6,7 @@ defmodule Words do
     sentence
       |> cleanup
       |> to_words
-      |> display
+      |> build_dictionary
   end
 
   defp cleanup(sentence) do
@@ -15,7 +15,7 @@ defmodule Words do
 
   defp to_words(sentence), do: split(sentence)
 
-  defp display(words) do
+  defp build_dictionary(words) do
     Enum.reduce words, HashDict.new, fn (word, acc) ->
       HashDict.merge acc, [{word, 1}], fn(_key, old_count, new_count) ->
         (old_count || 0) + new_count

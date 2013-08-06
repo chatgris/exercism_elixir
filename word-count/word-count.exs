@@ -10,7 +10,7 @@ defmodule Words do
   end
 
   defp cleanup(sentence) do
-    replace(%r{[^a-z0-9 ]}, downcase(sentence), "")
+    replace(%r{[^\w\s]}, downcase(sentence), "")
   end
 
   defp to_words(sentence), do: split(sentence)
